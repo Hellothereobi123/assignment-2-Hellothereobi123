@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
   score += test_read_before_mount();
   score += test_read_invalid_parameters();
   score += test_read_within_block();
+  printf("somethingsomething");
   score += test_read_across_blocks();
   score += test_read_three_blocks();
   score += test_read_across_disks();
@@ -173,6 +174,7 @@ int test_read_within_block() {
   };
 
   if (memcmp(out, expected, SIZE) != 0) {
+    //printf("somethingsomething\n\n\n\n\n\n\n\n\n\n");
     char *out_s = stringify(out, SIZE);
     char *expected_s = stringify(expected, SIZE);
 
@@ -190,6 +192,7 @@ out:
     return 0;
 
   printf("passed\n");
+  //printf("lols");
   return 1;
 }
 
